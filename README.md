@@ -1,7 +1,9 @@
 # UaScript
 Ukrainian programming language
 
-To run demo:
+## To run demo:
 
 `npm i`
-`sh runner.sh true demo demo-lib`
+`sh scripts/compiler-runner.sh demo demo-lib`
+
+## How to use in own projects
