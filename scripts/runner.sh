@@ -1,3 +1,6 @@
-source=$1
+#!/usr/bin/env node
 
-npm run compile false $source
+workDir=$1
+source=$2
+
+node $workDir/node_modules/uascript/lib false $source
