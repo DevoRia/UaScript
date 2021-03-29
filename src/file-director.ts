@@ -14,7 +14,8 @@ export async function compileByPath(inPath: string, outPath: string): Promise<vo
         await writeCompiledFiles(inPath, outPath, filePaths, compiledSources)
         resolve();
       } else {
-
+        const compiledSources = await compileFiles([inPath]);
+        await writeCompiledFiles(inPath, outPath, [inPath], compiledSources)
       }
     } catch (e) {
       reject(e);

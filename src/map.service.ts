@@ -21,6 +21,7 @@ export const dataMap = {
   'require': 'підключити',
   // functions
   'function': 'функція',
+  'typeof': 'тип',
   // Promise
   'Promise': 'Очікування',
   'async': 'очікування',

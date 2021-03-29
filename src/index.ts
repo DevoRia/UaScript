@@ -1,4 +1,5 @@
 import {compileByPath} from "./file-director";
+import {compileAndRunSource} from "./runner.service";
 
 async function main() {
   const args = process.argv.slice(2);
@@ -14,7 +15,7 @@ async function main() {
     await compileByPath(fromPath, outPath);
   } else if (!isFileCompiler) {
     const source = args[1];
-
+    await compileAndRunSource(source);
   }
 }
 
