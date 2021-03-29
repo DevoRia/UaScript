@@ -2,12 +2,22 @@
   "name": "uascript",
   "version": "1.0.0",
   "description": "Javascript in Ukrainian",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*",
+    "scripts/**/*"
+  ],
   "scripts": {
     "build": "tsc",
-    "compile": "tsc && node lib",
-    "start": "node"
+    "compile": "node lib",
+    "prepareVersion": "npm run build"
   },
+  "keywords": [
+    "Ukraine",
+    "script",
+    "language"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DevoRia/UaScript.git"
