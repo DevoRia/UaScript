@@ -4,7 +4,7 @@ Ukrainian programming language
 ## To run demo:
 ### (in cloned this project from git)
 `npm i`
-`sh scripts/compiler-runner.sh demo demo-lib`
+`npm run demo`
 
 ## How to use in own projects
 

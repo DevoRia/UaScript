@@ -1,6 +1,6 @@
 {
   "name": "uascript",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Javascript in Ukrainian",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,13 +10,15 @@
   ],
   "scripts": {
     "build": "tsc",
-    "compile": "node lib",
-    "prepareVersion": "npm run build"
+    "demo": "sh scripts/compiler-runner.sh $(pwd) demo demo-lib",
+    "compile": "node lib"
   },
   "keywords": [
     "Ukraine",
     "script",
-    "language"
+    "language",
+    "compiler",
+    "javascript"
   ],
   "repository": {
     "type": "git",
