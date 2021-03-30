@@ -26,7 +26,6 @@ export const dataMap = {
   'Promise': 'Очікування',
   'async': 'очікування',
   'await': 'очікує',
-  'console.log': 'написати',
   //OOP
   'private': 'приватний',
   'protected': 'захищений',
@@ -39,4 +38,6 @@ export const dataMap = {
   //Generator
   'function*': 'генератор',
   'yield': 'крок',
+  //Other
+  'console.log': 'написати',
 }
