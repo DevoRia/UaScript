@@ -10,13 +10,15 @@
   ],
   "scripts": {
     "build": "tsc",
-    "compile": "node lib",
-    "prepareVersion": "npm run build"
+    "demo": "sh scripts/compiler-runner.sh $(pwd) demo demo-lib",
+    "compile": "node lib"
   },
   "keywords": [
     "Ukraine",
     "script",
-    "language"
+    "language",
+    "compiler",
+    "javascript"
   ],
   "repository": {
     "type": "git",

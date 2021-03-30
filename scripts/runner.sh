@@ -3,4 +3,8 @@
 workDir=$1
 source=$2
 
-node $workDir/node_modules/uascript/lib false $source
+if [ ! -d $workDir/node_modules/uascript/lib ]; then
+  node $workDir false $source
+else
+  node $workDir/node_modules/uascript/lib false $source
+fi
