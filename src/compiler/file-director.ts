@@ -1,11 +1,14 @@
 import {compile} from "./compiler.service";
-import {Extensions} from "./constants";
+import {Extensions} from "../constants";
+import {ShellCommand} from "../utils/shell-command";
 
 const fs = require('fs');
 const pathHelper = require('path');
-const shell = require('shelljs');
+
+const shellCommand = new ShellCommand();
 
 export async function compileByPath(inPath: string, outPath: string): Promise<void> {
+  await shellCommand.rmrf(outPath);
   return new Promise(async (resolve, reject) => {
     try {
       if (fs.lstatSync(inPath).isDirectory()) {
@@ -60,10 +63,10 @@ function compileFiles(files: string[]): Promise<string[] | any> {
   return Promise.all(promises);
 }
 
-function writeCompiledFiles(inPath: string, outPath: string, filePaths: string[], compiledSource: string[]) {
-  const promises = filePaths.map((path, i )=> new Promise((resolve, reject) => {
+async function writeCompiledFiles(inPath: string, outPath: string, filePaths: string[], compiledSource: string[]) {
+  const promises = filePaths.map((path, i )=> new Promise(async (resolve, reject) => {
     const outCompiledPath = prepareCompiledFilePath(path, inPath, outPath);
-    prepareFolders(outPath, outCompiledPath);
+    await prepareFolders(outPath, outCompiledPath);
     fs.writeFile(outCompiledPath, compiledSource[i], { flag: 'wx' },  (err: Error) => {
       if (err) {
         reject(err);
@@ -78,8 +81,7 @@ function prepareCompiledFilePath(path: string, inPath: string, outPath: string) 
   return path.replace(inPath, outPath).replace(Extensions.UAS, Extensions.JS);
 }
 
-function prepareFolders(rootPath: string, path: string) {
-  shell.rm('-rf', rootPath)
+async function prepareFolders(rootPath: string, path: string) {
   const pathFolders = path.split('/');
-  shell.mkdir('-p', pathFolders.slice(0, pathFolders.length - 1).join('/'));
+  await shellCommand.mkdir(pathFolders.slice(0, pathFolders.length - 1).join('/'), true);
 }

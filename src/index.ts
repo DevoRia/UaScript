@@ -1,5 +1,5 @@
-import {compileByPath} from "./file-director";
-import {compileAndRunSource} from "./runner.service";
+import {compileByPath} from "./compiler/file-director";
+import {compileAndRunSource} from "./compiler/runner.service";
 
 async function main() {
   const args = process.argv.slice(2);
