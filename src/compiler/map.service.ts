@@ -26,5 +26,17 @@ export const dataMap = {
   'Promise': 'Очікування',
   'async': 'очікування',
   'await': 'очікує',
-  'console.log': 'написати'
+  'console.log': 'написати',
+  //OOP
+  'private': 'приватний',
+  'protected': 'захищений',
+  'public': 'публічний',
+  'export': 'поділитись',
+  'modules.export': 'поділитись',
+  'constructor': 'конструктор',
+  'super': 'батьківський',
+  'this': 'цей',
+  //Generator
+  'function*': 'генератор',
+  'yield': 'крок',
 }
