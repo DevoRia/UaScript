@@ -35,9 +35,15 @@ export const dataMap = {
   'constructor': 'конструктор',
   'super': 'батьківський',
   'this': 'цей',
+  'class': 'класс',
+  'extends': 'походить',
+  'implements': 'реалізує',
+  'abstract': 'абстрактний',
+  'interface': 'інтерфейс',
   //Generator
   'function*': 'генератор',
   'yield': 'крок',
   //Other
   'console.log': 'написати',
+  '.js': '.uas',
 }
