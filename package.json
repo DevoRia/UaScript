@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "demo": "sh scripts/compiler-runner.sh $(pwd) demo demo-lib",
+    "demo": " mkdir -p demo-lib && tsc && sh scripts/compiler-runner.sh $(pwd) demo demo-lib",
     "compile": "node lib"
   },
   "keywords": [
@@ -28,6 +28,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DevoRia/UaScript/issues"
+  },
+  "bin": {
+    "uas": "./bin/index.js"
   },
   "homepage": "https://github.com/DevoRia/UaScript#readme",
   "devDependencies": {
