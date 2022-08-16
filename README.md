@@ -1,6 +1,13 @@
 # UaScript
 Ukrainian programming language
 
+https://uascript.web.app/
+
+[![npm version](https://badge.fury.io/js/uascript.svg)](https://www.npmjs.com/package/uascript)
+[![Downloads](https://img.shields.io/npm/dm/uascript.svg)](https://www.npmjs.com/package/uascript)
+
+
+
 ## To run demo:
 ### (in cloned this project from git)
 `npm i`
