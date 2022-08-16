@@ -3,10 +3,9 @@ import {dataMap} from "./keyword-map";
 export function compile(source: string): Promise<string> {
   return new Promise((resolve, reject) => {
     try {
-      const {source: sourceWithoutStrings, strings} = parseString(source)
+      const {source: sourceWithoutStrings, strings} = parseString(source);
       source = sourceWithoutStrings;
-      Object.entries(dataMap)
-        .map(map => source = source.replace(new RegExp(map[1], 'g'), map[0]));
+      Object.entries(dataMap).map(map => source = source.replace(new RegExp(map[1], 'g'), map[0]));
       source = restoreString(source, strings);
       resolve(source);
     } catch (e) {

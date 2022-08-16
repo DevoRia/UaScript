@@ -1,4 +1,4 @@
-import {compile} from "./compiler.service";
+import {compile} from "./interpreter";
 
 export async function compileAndRunSource(source: string) {
   runSource(await compile(source));

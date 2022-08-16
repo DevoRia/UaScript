@@ -1,5 +1,5 @@
-import {compile} from "./compiler.service";
-import {Extensions} from "../constants";
+import {compile} from "../interpreter/interpreter";
+import {Extensions} from "../constants/extensions";
 import {ShellCommand} from "../utils/shell-command";
 
 const fs = require('fs');
