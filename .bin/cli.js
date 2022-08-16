@@ -2,7 +2,7 @@ bold=$(tput bold)
 normal=$(tput sgr0)
 workDir=$(pwd)
 
-if [ -e u1as.config.json ]
+if [ -e uas.config.json ]
     then
 config=$(uasconf "$(cat $(pwd)/uas.config.json)")
 
