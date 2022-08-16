@@ -12,7 +12,7 @@ export async function compileByPath(inPath: string, outPath: string): Promise<vo
   return new Promise(async (resolve, reject) => {
     try {
       if (fs.lstatSync(inPath).isDirectory()) {
-        const filePaths = (await getFilesDeep(inPath)).flat() as string[];
+        const filePaths = (await getFilesDeep(inPath)).flat(Infinity) as string[];
         const compiledSources = await compileFiles(filePaths);
         await writeCompiledFiles(inPath, outPath, filePaths, compiledSources)
         resolve();
