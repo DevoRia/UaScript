@@ -13,6 +13,10 @@
     "demo": " mkdir -p demo-lib && tsc && sh scripts/compiler-runner.sh $(pwd) demo demo-lib",
     "compile": "node lib"
   },
+  "bin": {
+    "uas": ".bin/cli.js",
+    "uasconf": ".bin/conf.js"
+  },
   "keywords": [
     "Ukraine",
     "script",
