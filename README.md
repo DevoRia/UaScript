@@ -8,19 +8,14 @@ Ukrainian programming language
 
 ## How to use in own projects
 
+Before you need to install `Node.js`
+
+0. Run `npm init` and complete all actions.
+
 1. Run script inside npm project:
 `npm i uascript`
 
-2. Create folder `src` and create inside `index.uas`
-
-The tree of your project should be something like this:
-```
-├── _src
-│   └── index.uas
-├── _package.json
-...
-```
-
+2. Create folder with your `src` source and create inside `index.uas`
 3. Next input into `index.uas` file simple code to say hello to this world:)
 
 ```
@@ -31,18 +26,34 @@ The tree of your project should be something like this:
 Головна();
 ```
 
-4. Then add replace scripts configuration in `package.json` in project root.
+4. Then create `uas.config.json` config file in the root of your project. And insert there next:
 
 ```
-"scripts": {
-    "build": "sh node_modules/uascript/scripts/compiler.sh $(pwd) src dist",
-    "start": "node dist"
+{
+  "from": "src",
+  "to": "dist"
 }
 ```
 
-5. Run this and enjoy 🦄
+The tree of your project should be something like this:
+```
+├── _src
+│   └── index.uas
+│   _uas.config.json
+├── _package.json
+...
+```
+
+4. Then open console and execute only
 
 ```
-npm run build
-npm run start
+uas
+```
+
+After that UaScript compiles into JS
+
+5. Run this and enjoy 🦄 
+
+```
+node dist
 ```
